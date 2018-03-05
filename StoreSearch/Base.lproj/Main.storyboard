@@ -17,9 +17,32 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="evF-jE-X89">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="App name, artis, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="pYJ-Rm-0Cu">
+                                <rect key="frame" x="0.0" y="20" width="320" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="evF-jE-X89" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2eD-zX-h74"/>
+                            <constraint firstItem="pYJ-Rm-0Cu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6QW-3D-O1C"/>
+                            <constraint firstItem="pYJ-Rm-0Cu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9tp-7u-dOF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="evF-jE-X89" secondAttribute="bottom" id="Igi-QW-V2V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="evF-jE-X89" secondAttribute="trailing" id="Ujg-Co-pSu"/>
+                            <constraint firstItem="pYJ-Rm-0Cu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tiN-Um-m2O"/>
+                            <constraint firstItem="evF-jE-X89" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yJM-4w-6v3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="pYJ-Rm-0Cu" id="7lj-3S-MeS"/>
+                        <outlet property="tableView" destination="evF-jE-X89" id="RBX-ED-p48"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
