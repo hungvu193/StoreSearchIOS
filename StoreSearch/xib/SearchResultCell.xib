@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,16 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XKn-Ou-R32">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XKn-Ou-R32" id="bsg-xf-dg9">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </tableViewCellContentView>
-            <point key="canvasLocation" x="482" y="-995"/>
-        </tableViewCell>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="DWA-Xu-NA4">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="DWA-Xu-NA4" customClass="SearchResultCell" customModule="StoreSearch" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DWA-Xu-NA4" id="cYA-da-4cm">
@@ -58,6 +49,11 @@
                     <constraint firstItem="r67-fJ-TdD" firstAttribute="leading" secondItem="cYA-da-4cm" secondAttribute="leading" constant="15" id="vnt-ZN-nui"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="artistNameLabel" destination="23S-dq-H55" id="Uxh-xc-rMP"/>
+                <outlet property="artworkImageView" destination="r67-fJ-TdD" id="neA-xd-ca2"/>
+                <outlet property="nameLabel" destination="LzQ-35-4XP" id="2qt-D0-ngq"/>
+            </connections>
             <point key="canvasLocation" x="480" y="-1015"/>
         </tableViewCell>
     </objects>
