@@ -14,6 +14,7 @@ class SearchViewController : UIViewController {
         static let nothingFoundCell = "NothingFoundCell"
         static let loadingCell = "LoadingCell"
     }
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     var dataTask: URLSessionDataTask?
     var isLoading = false
     //    @IBOutlet weak var searchBar2: UISearchBar!
@@ -22,11 +23,16 @@ class SearchViewController : UIViewController {
     var searchResults : [SearchResult] = []
     
     var hasSearched = false
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+       let segment = sender as! UISegmentedControl
+       print("\(segment.selectedSegmentIndex)")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 108, left: 0, bottom: 0, right: 0)
         //normal cell nib
         let cellNib = UINib(nibName: TableViewCellIdentifiers.searchResultCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.searchResultCell)
@@ -38,7 +44,10 @@ class SearchViewController : UIViewController {
         tableView.register(cellLoading, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
         tableView.rowHeight = 80
         searchBar.becomeFirstResponder()
+        
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -243,7 +252,7 @@ extension SearchViewController : UITableViewDelegate{
              - error : error
              */
              dataTask = seesion.dataTask(with: url, completionHandler: { (data, respone, error) in
-                if let error = error as? NSError , error.code == -999{
+                if let error = error as NSError? , error.code == -999{
                     return
                 } else {
                     print("On main thread? " + (Thread.current.isMainThread ? "Yes" : "No"))
@@ -340,6 +349,7 @@ extension SearchViewController : UITableViewDataSource {
         return cell
     }
 }
+
 
 
 //overload < to use
