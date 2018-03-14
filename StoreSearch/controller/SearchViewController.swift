@@ -31,7 +31,7 @@ class SearchViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        //thêm dòng cmt vào test reset head
         tableView.contentInset = UIEdgeInsets(top: 108, left: 0, bottom: 0, right: 0)
         //normal cell nib
         let cellNib = UINib(nibName: TableViewCellIdentifiers.searchResultCell, bundle: nil)
