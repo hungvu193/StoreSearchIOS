@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class SearchViewController : UIViewController {
     struct TableViewCellIdentifiers {
         static let searchResultCell = "SearchResultCell"
@@ -44,9 +45,15 @@ class SearchViewController : UIViewController {
         tableView.register(cellLoading, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
         tableView.rowHeight = 80
         searchBar.becomeFirstResponder()
-        
+        testAlamofire()
     }
     
+    
+    fileprivate func testAlamofire(){
+        Alamofire.request("https://api.androidhive.info/contacts/").responseData { (respone) in
+            print("respone > \(respone.data)")
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
